@@ -1,11 +1,17 @@
 <!DOCTYPE html>
-<html>
+<html lang="ko">
 
 <head>
-    <meta charset="utf-8" />
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport"
+        content="width=device-width, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0, user-scalable=no">
     <title>API Project</title>
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css"
         integrity="sha384-9aIt2nRpC12Uk9gS9baDl411NQApFmC26EwAOH8WgZl5MYYxFfc+NcPb1dKGj7Sk" crossorigin="anonymous">
+
+    <script type="text/javascript"
+        src="https://openapi.map.naver.com/openapi/v3/maps.js?ncpClientId=wskmy70acg"></script>
 </head>
 
 <body>
@@ -14,18 +20,15 @@
         <button type="button" class="alert alert-success"><a href="{% url 'home'%}">kakao 지도</a></button>
         <button type="button" class="alert alert-warning"><a href="{% url 'naver'%}">naver 지도</a></button>
     </div>
-
     <div id="map" style="width:500px;height:400px;"></div>
-    <script type="text/javascript"
-        src="//dapi.kakao.com/v2/maps/sdk.js?appkey=0bec14cc007d779cb32b74e6896122ca"></script>
+
     <script>
-        var container = document.getElementById('map');
-        var options = {
-            center: new kakao.maps.LatLng(37.235115, 127.1998457),
-            level: 3
+        var mapOptions = {
+            center: new naver.maps.LatLng(37.235115, 127.1998457),
+            zoom: 17
         };
 
-        var map = new kakao.maps.Map(container, options);
+        var map = new naver.maps.Map('map', mapOptions);
     </script>
 </body>
 

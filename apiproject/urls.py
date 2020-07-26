@@ -20,4 +20,5 @@ import maps.views
 urlpatterns = [
     path('admin/', admin.site.urls),
     path('', maps.views.home, name='home'),
+    path('maps/naver/', maps.views.naver, name='naver'),
 ]
